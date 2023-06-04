@@ -43,10 +43,9 @@ if ($the_query->have_posts()) {
 ?>
           </div>
           <div class="col-scroll">
-               <div style="padding-top: 80px;" class="text-black">
+               <div class="text-black">
                     <div class="d-flex flex-row mb-3 text-white mt-4 gap-4 text-uppercase text-black">
-                         <div class=""><a href style="text-decoration: underline; color: white;" !important> Development</a></div>
-                         <div class=""><a href>Multi-Residential</a></div>
+                         <div class="text-black"><a href>Multi-Residential</a></div>
                     </div>
 
                     <div class="text-black">
@@ -66,7 +65,7 @@ $categories = get_categories(array(
 
 foreach ($categories as $category) {
     echo '<div>';
-    echo '<h2 class="category-name">' . esc_html($category->name) . '</h2>';
+    echo '<h2 class="category-name text-white">' . esc_html($category->name) . '</h2>';
     echo '<ul>';
 
     $category_posts = new WP_Query(array(
@@ -84,7 +83,7 @@ foreach ($categories as $category) {
     if ($category_posts->have_posts()) {
         while ($category_posts->have_posts()) {
             $category_posts->the_post();
-            echo '<li><a href="' . esc_url(get_permalink()) . '">' . get_the_title() . '</a></li>';
+            echo '<li><a class="text-3xl" href="' . esc_url(get_permalink()) . '">' . get_the_title() . '</a></li>';
         }
     }
 
